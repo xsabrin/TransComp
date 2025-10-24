@@ -1,0 +1,12 @@
+Package: transComp
+Title: Determine and Compare Transcript Composition of Datasets
+Version: 0.0.0.9000
+Authors@R: 
+    person("Sabrina", "Xi", , "sabrina.xi@mail.utoronto.ca", role = c("aut", "cre"))
+Description: Determine transcript composition of a dataset or identify whether two transcripts are the same given genomic coordinates or ensembl labels using the hg38 reference genome. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: 
+    ensembldb
