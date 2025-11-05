@@ -1,6 +1,6 @@
 citHeader("To cite TransComp use:")
 
-citentry(
+citEntry(
   entry = "Unpublished",
   title = "TransComp",
   author = "Sabrina Xi",
