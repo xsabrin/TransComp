@@ -37,7 +37,9 @@ TransComp <- function(transData) {
     poss_transc <- IndTransc(transData, diff_exp[i, ]$ensembl_gene_id, diff_exp[i, ]$sample)
 
     for (j in 1:length(poss_transc)) {
-      gene_transcripts[i, ] <- c(diff_exp[1, ]$ensembl_gene_id, poss_transc[j])
+      if (length(poss_transc) != 0) {
+        gene_transcripts[i, ] <- c(diff_exp[1, ]$ensembl_gene_id, poss_transc[j])
+      }
     }
   }
 
@@ -112,6 +114,10 @@ IndTransc <- function(dataset1, geneID = NA, sample = NA) {
 #'
 #' @returns Returns a list of genes that show overlap in transcripts. If there are none, an empty list will be returned.
 #'
+#' @examples
+#' overlapping_transcripts <- CompTransc(formattedData, secondExample)
+#' overlapping_transcripts
+#'
 #' @export
 
 CompTransc <- function(transComp1, transComp2) {
@@ -126,9 +132,12 @@ CompTransc <- function(transComp1, transComp2) {
   data1 <- transComp::TransComp(transComp1)
   data2 <- transComp::TransComp(transComp2)
 
+  # get transcripts for each data result
+  transcript1 <- data1$ensembl_transcript_id
+  transcript2 <- data2$ensembl_transcript_id
+
   # find overlapping transcripts
-  overl_trans <- merge(transComp1, transComp2, by = "ensembl_transcript_id", "ensembl_gene_id")
-  genes_with_overlap <- overl_trans$ensembl_gene_id
+  overl_trans <- intersect(transcript1, transcript2)
 
   return(overl_trans)
 }
