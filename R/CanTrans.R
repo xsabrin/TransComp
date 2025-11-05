@@ -3,13 +3,21 @@
 #' Identify the composition of canonical transcripts of a dataset from its exon composition.
 #'
 #' @param transData dataframe containing gene and exon data. It should also contain a column identifying exons that were sequenced from the same transcript.
+#'
 #' @returns Returns a list of genes that only contains exons found on the canonical transcript.
+#'
+#' @examples
+#' canonical_transcripts <- CanTrans(formattedData)
+#' canonical_transcripts
+#'
+#' @references
+#' BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
+#' Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
+#' (2005).
+#'
 #' @export
+#'
 #' @import biomaRt
-#' @import stringr
-#' @import utils
-#' @importFrom magrittr %>%
-
 CanTrans <- function(transData) {
 
   # check that the input dataset has a list of exon and gene IDs
@@ -44,5 +52,5 @@ CanTrans <- function(transData) {
 
   canonGenes <- merge(x=canonicalTransc, y=dataset, by=c("ensembl_transcript_id", "ensembl_gene_id"), all=FALSE)
 
-  return(canonGenes)
+  return(unique(canonGenes$ensembl_gene_id))
 }

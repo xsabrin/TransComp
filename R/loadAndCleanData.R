@@ -4,15 +4,38 @@
 #' gene IDs, exon IDs, and transcript IDs.
 #'
 #' @param transFile input csv file. This file should contain genomic coordinates, and either the ensembl gene ID or both a gene identifier and source. It can also include a column detailing which rows were sequenced as part of the same sample, which can be useful for some downstream tasks.
+#'
 #' @returns Returns a cleaned dataset.
+#'
+#' @examples
+#' filepath <- system.file("extdata", "example_data.csv", package = "transComp")
+#' results <- loadAndCleanData(filepath)
+#' results
+#'
+#' @references
+#' BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
+#' Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
+#' (2005).
+#'
+#' Wickham H (2025). stringr: Simple, Consistent Wrappers for Common String Operations.
+#' doi:10.32614/CRAN.package.stringr <https://doi.org/10.32614/CRAN.package.stringr>, R package version 1.5.2,
+# '<https://CRAN.R-project.org/package=stringr>.
+#'
+#' R Core Team (2025). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing,
+#' Vienna, Austria. <https://www.R-project.org/>.
+#'
+#' Bache S, Wickham H (2025). magrittr: A Forward-Pipe Operator for R. doi:10.32614/CRAN.package.magrittr
+#' <https://doi.org/10.32614/CRAN.package.magrittr>, R package version 2.0.4,
+#' <https://CRAN.R-project.org/package=magrittr>.
+#'
 #' @export
+#'
 #' @import biomaRt
 #' @import stringr
 #' @import utils
 #' @importFrom stats na.omit
 #' @importFrom magrittr %>%
-
-loadCleanData <- function(transFile = NA) {
+loadAndCleanData <- function(transFile = NA) {
   # check if user input file is valid
   if (is.na(transFile)) {
     stop("File path is null")
@@ -24,9 +47,10 @@ loadCleanData <- function(transFile = NA) {
   # load ensembl database and available filters
   ensembl <- biomaRt::useEnsembl(biomart="ensembl", dataset="hsapiens_gene_ensembl")
   filters <- biomaRt::listFilters(ensembl)
+
   # pre-process data: if a source for the gene name is included, standardize to ensembl stable gene ID
   # if not, check that the genes are given using ensembl gene ID
-  if (("geneSource" %in% colnames(transData)) && !("gene_ids" %in% colnames(transData))) {
+  if (("geneSource" %in% colnames(transData)) && !("geneIds" %in% colnames(transData))) {
     sources <- unique(transData$geneSource)
     faultySources <- c()
 
