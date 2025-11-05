@@ -15,3 +15,13 @@ Returns a list of genes that only contains exons found on the canonical transcri
 \description{
 Identify the composition of canonical transcripts of a dataset from its exon composition.
 }
+\examples{
+canonical_transcripts <- CanTrans(formattedData)
+canonical_transcripts
+
+}
+\references{
+BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
+Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
+(2005).
+}

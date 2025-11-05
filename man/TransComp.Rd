@@ -2,16 +2,25 @@
 % Please edit documentation in R/TransComp.R
 \name{TransComp}
 \alias{TransComp}
-\title{Identify Gene Transcript Based on Genomic Coordinates}
+\title{Identify Gene Transcripts Based on Genomic Coordinates}
 \usage{
 TransComp(transData)
 }
 \arguments{
-\item{transData}{a dataframe containing the ensembl transcript, exon, and gene IDs. It should also include a column identifying grouped exons.}
+\item{transData}{a dataframe containing the ensembl transcript, exon, and gene IDs.
+It should also include a column identifying grouped exons.}
 }
 \value{
 Returns a dataframe with the possible transcript of each gene read.
 }
 \description{
 Identify the transcript composition of a given dataset, given multiple sequencing reads of a gene.
+}
+\examples{
+canonical_transcripts <- TransComp(formattedData)
+canonical_transcripts
+
+}
+\references{
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). \emph{dplyr: A Grammar of Data Manipulation}.
 }

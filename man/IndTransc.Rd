@@ -4,16 +4,20 @@
 \alias{IndTransc}
 \title{Identify Gene Transcript Based on Genomic Coordinates}
 \usage{
-IndTransc(dataset1, geneID)
+IndTransc(dataset1, geneID = NA, sample = NA)
 }
 \arguments{
 \item{dataset1}{a dataframe containing the ensembl exon and transcript IDs.}
 
 \item{geneID}{the ensembl gene ID of the target gene.}
+
+\item{sample}{the sample number.}
 }
 \value{
-Returns a list of possible transcripts this gene could be. If there are none, the list will be empty.
+Returns the transcript this sampled gene could have been sequenced
+from or a list if there are multiple possibilities. If there are none, it will return an empty list.
 }
 \description{
-Identify which transcript of a gene the given genomic coordinates belong to.
+Identify which transcript of a gene the given genomic coordinates belong to. These should
+be grouped by sequenced transcript. This function is not available to the user.
 }
