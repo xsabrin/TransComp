@@ -5,7 +5,7 @@
 \alias{formattedData}
 \title{Example BRCA2 and TP53 Dataframe}
 \format{
-A dataframe with two columns:
+A dataframe with 7 columns:
 \describe{
 \item{sample}{The sample number}
 \item{ensembl_gene_id}{The ensembl gene ID}
@@ -14,7 +14,6 @@ A dataframe with two columns:
 \item{exon_chrom_start}{The exon start coordinate.}
 \item{exon_chrom_end}{The exon end coordinate.}
 \item{Length}{The transcript length.}
-}
 }
 }
 \source{

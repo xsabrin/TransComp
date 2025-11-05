@@ -7,7 +7,7 @@
 CanTrans(transData)
 }
 \arguments{
-\item{transData}{dataframe containing gene and exon data. It should also contain a column identifying exons that were sequenced from the same transcript.}
+\item{transData}{dataframe containing gene and exon data.}
 }
 \value{
 Returns a list of genes that only contains exons found on the canonical transcript.

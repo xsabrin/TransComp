@@ -19,7 +19,7 @@ Plot the canonical transcript composition of this dataset based on transcripts
 associated with the exon composition associated with each gene.
 }
 \examples{
-canPlot <- plotTransCan(formattedData)
+canPlot <- plotTransCan(formattedData, "test data")
 canPlot
 
 }

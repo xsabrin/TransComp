@@ -18,3 +18,8 @@ Returns a list of genes that show overlap in transcripts. If there are none, an 
 For each common gene in dataset1 and dataset2, identify whether they could be looking at the same
 transcript based on the genetic coordinates listed.
 }
+\examples{
+overlapping_transcripts <- CompTransc(formattedData, secondExample)
+overlapping_transcripts
+
+}
