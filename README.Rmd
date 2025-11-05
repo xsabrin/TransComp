@@ -18,17 +18,41 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of transComp is to ...
+## Description
+
+The goal of transComp is to identify possible transcripts based on genomic coordinates for given genes in a dataset and create graphical outputs for this. It can also be used to identify the composition of canonical transcripts in your dataset. transComp aims to add to the current bioinformatics field by providing a fast and automated method of identifying transcripts in datasets and comparing between datasets. 
 
 ## Installation
 
 You can install the development version of transComp like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+install.packages("devtools")
+library("devtools")
+devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
+library("transComp")
+```
+To run the shinyApp: Under construction
+
+## Overview
+
+``` r
+ls("package:TestingPackage")
+data(package = "TestingPackage") 
+browseVignettes("TestingPackage")
 ```
 
-## Example
+`TransComp` contains 5 user-accessible functions. 
+
+1. ***LoadAndCleanData*** for loading and cleaning a given dataset into a standardized format that can be used by the rest of the functions.
+
+2. ***CanTrans*** for identifying canonical transcripts in your dataset.
+
+3. ***PlotTransCan*** for plotting canonical transcript composition in your dataset.
+
+4. ***TransComp*** for identifying the transcript composition of your dataset.
+
+5. ***CompTransc*** for identifying same transcripts in two datasets. 
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -37,18 +61,35 @@ library(transComp)
 ## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## Contributions
 
-```{r cars}
-summary(cars)
-```
+This package was developed by Sabrina Xi. Reference data was taken from ensembl using the package 'biomart', data was formatted using 'dplyr' and the pipe operation developed by 'magrittr', and 'ggplot2' was used to develop plots'. Fundamental R packages 'utils' and 'stats' were also used to format and clean data. 
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
+Every function was developed by Sabrina Xi.
 
-You can also embed plots, for example:
+## References 
 
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
+Bache S, Wickham H (2025). _magrittr: A Forward-Pipe Operator for R_. doi:10.32614/CRAN.package.magrittr
+  <https://doi.org/10.32614/CRAN.package.magrittr>, R package version 2.0.4,
+  <https://CRAN.R-project.org/package=magrittr>.
 
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
+  Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
+  (2005).
+
+Dyer C Sarah et al. Ensembl 2025. Nucleic Acids Res. 2025, 53(D1):D948–D957. PMID: 39656687. doi:10.1093/nar/gkae1071
+
+R Core Team (2025). _R: A Language and Environment for Statistical Computing_. R Foundation for Statistical Computing,
+  Vienna, Austria. <https://www.R-project.org/>.
+
+Silva, A. (2022) TestingPackage: An Example R Package For BCB410H. https://github.com/anjalisilva/TestingPackage
+
+Wickham, H. (2016). ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York. ISBN 978-3-319-24277-4. https://ggplot2.tidyverse.org
+
+Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data Manipulation_.
+  doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
+  <https://CRAN.R-project.org/package=dplyr>.
+
+## Acknowledgments
+
+This package was developed as part of an assessment for 2023 BCB410H: Applied Bioinformatics course at the University of Toronto, Toronto, CANADA. CovidWasteWatch welcomes issues, enhancement requests, and other contributions. To submit an issue, use the GitHub issues. Many thanks to those who provided feedback to improve this package.
