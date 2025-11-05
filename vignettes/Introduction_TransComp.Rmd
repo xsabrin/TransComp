@@ -1,0 +1,96 @@
+---
+title: "A introduction to TransComp"
+author: "Sabrina Xi"
+date: "`r format(Sys.time(), '%d %b %Y')`"
+output: 
+  rmarkdown::html_vignette:
+    toc: true
+    number_sections: false
+vignette: >
+  %\VignetteIndexEntry{An introduction to TransComp}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.align = "center", 
+               out.width = "90%",
+               fig.width = 6, fig.height = 5.5,
+               dev.args=list(pointsize=10),
+               par = TRUE, # needed for setting hook 
+               collapse = TRUE, # collapse input & ouput code in chunks
+               warning = FALSE)
+knit_hooks$set(par = function(before, options, envir)
+  { if(before && options$fig.show != "none") 
+       par(family = "sans", mar=c(4.1,4.1,1.1,1.1), mgp=c(3,1,0), tcl=-0.5)
+})
+set.seed(1) # for exact reproducibility
+```
+
+## Introduction
+
+`TransComp` is an R package designed to identify possible transcripts composition of datasets based on genomic coordinates. **This document gives a tour of TransComp (version 0.1.0)**.
+
+To download **TransComp**, use the following commands:
+
+```r
+require("devtools")
+devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
+library("TransComp")
+```
+To list all sample functions available in the package:
+``` r
+ls("package:TransComp")
+```
+
+To list all sample datasets available in the package:
+``` r
+data(package = "TransComp")
+```
+
+## Applications
+
+```{r, }
+library(transComp)
+``` 
+
+To use your own dataset, provide a valid path to a CSV file which includes columns containing the ensembl gene ID or gene name and the genomic coordinates. In this example, we use information taken from Ensembl containing data for two transcripts of BRCA2 and TP53.
+
+Here the function *loadAndCleanData* is a function that standardizes a dataset to include the appropriate column format for later analysis, using IDs derived from ensembl (ensembl, 2025).
+
+As an example, let's use the *example_data* dataset which contains data for 2 transcripts of BRCA2 and 1 transcript of TP53. The output is saved into the R object *formattedData*.
+
+```{r}
+# get path to example data
+exampleFilepath <- system.file("extdata", "example_data.csv", 
+                              package = "transComp")
+
+# load and clean data
+formattedData <- transComp::loadAndCleanData(exampleFilepath)
+```
+
+Using this formatted dataset, you can manipulate the data to look at various elements of the dataset's transcript composition. An example using *CanTrans*, which is a function returning genes for which your dataset only has canonical exons:
+
+```{r, }
+# get genes with only canonical exons in your dataset
+CanTrans(formattedData)
+``` 
+
+To visualize these results, you may use *PlotCanTrans* function. To read more about *PlotCanTrans* function, see:
+
+```{r, }
+?transComp::PlotTransCan
+``` 
+
+We can create a plot visualizing the proportion of canonical transcripts in this dataset: 
+```{r, }
+transComp::plotTransCan(formattedData, "test data")
+```
+
+We can also identify possible transcripts for a specified gene and sample, and then do this for every gene and sample in the given dataset using *TransComp*. This will give us all the transcripts for this gene that have every exon sequenced in the specified sample.
+
+```{r, }
+transComp::TransComp(formattedData)
+```
+
