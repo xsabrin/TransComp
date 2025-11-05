@@ -60,7 +60,7 @@ loadAndCleanData <- function(transFile = NA) {
         faultySources <- append(faultySources, source)
       }
       else {
-        currSource <- transData %>% filter(geneSource == source)
+        currSource <- transData[transData$geneSource == source, ]
 
         # get the gene IDs based on the values of the given gene source
         geneIds <- biomaRt::getBM(attributes=c('ensembl_gene_id', source), filters =
@@ -92,11 +92,12 @@ loadAndCleanData <- function(transFile = NA) {
     # for every different gene, find the corresponding ensembl transcripts and exons
     for (gene in genes) {
       # load the possible transcripts and corresponding exons for this gene
-      ensembldbValues <- biomaRt::getBM(attributes=c("ensembl_transcript_id", "ensembl_exon_id", "exon_chrom_start", "exon_chrom_end"), filters =
+      ensembldbValues <- biomaRt::getBM(attributes=c("ensembl_gene_id", "ensembl_transcript_id", "ensembl_exon_id", "exon_chrom_start", "exon_chrom_end"), filters =
                                            'ensembl_gene_id', values = gene, mart = ensembl)
 
       # merge corresponding possible exon IDs with genomic start and stop coordinates for each datasets
-      transData <- merge(x = transData, y = ensembldbValues, by = c("exon_chrom_start", "exon_chrom_end", "ensembl_gene_id"), all.x = TRUE)
+      transData <- merge(x = transData, y = ensembldbValues, all.x = TRUE)
+      print(transData)
     }
   }
 

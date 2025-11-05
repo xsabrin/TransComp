@@ -2,7 +2,7 @@
 #'
 #' Identify the composition of canonical transcripts of a dataset from its exon composition.
 #'
-#' @param transData dataframe containing gene and exon data. It should also contain a column identifying exons that were sequenced from the same transcript.
+#' @param transData dataframe containing gene and exon data.
 #'
 #' @returns Returns a list of genes that only contains exons found on the canonical transcript.
 #'
@@ -25,8 +25,6 @@ CanTrans <- function(transData) {
     stop("Dataset should include ensembl gene IDs in a column labeled 'ensembl_gene_id'.")
   } else if (!("ensembl_exon_id" %in% colnames(transData))) {
     stop("Dataset should include ensembl exon IDs in a column labeled 'ensembl_exon_id'.")
-  } else if (!("sample" %in% colnames(transData))) {
-    stop("Dataset should include an identifier grouping exons in a column labeled 'sample'.")
   }
 
   dataset <- transData
