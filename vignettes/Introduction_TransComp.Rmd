@@ -88,9 +88,8 @@ We can create a plot visualizing the proportion of canonical transcripts in this
 transComp::plotTransCan(formattedData, "test data")
 ```
 
-We can also identify possible transcripts for a specified gene and sample, and then do this for every gene and sample in the given dataset using *TransComp*. This will give us all the transcripts for this gene that have every exon sequenced in the specified sample.
+We can also identify possible transcripts for a specified gene and sample, and then do this for every gene and sample in the given dataset using *TransComp*. This will give us all the transcripts for this gene that have every exon sequenced in the specified sample. We can also find overlapping transcripts between two datasets using *CompTransc*.
 
 ```{r, }
 transComp::TransComp(formattedData)
 ```
-
