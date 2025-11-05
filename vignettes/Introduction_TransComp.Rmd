@@ -37,16 +37,16 @@ To download **TransComp**, use the following commands:
 ```r
 require("devtools")
 devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
-library("TransComp")
+library("transComp")
 ```
 To list all sample functions available in the package:
 ``` r
-ls("package:TransComp")
+ls("package:transComp")
 ```
 
 To list all sample datasets available in the package:
 ``` r
-data(package = "TransComp")
+data(package = "transComp")
 ```
 
 ## Applications
