@@ -1,0 +1,10 @@
+citHeader("To cite TransComp use:")
+
+citentry(
+  entry = "Unpublished",
+  title = "TransComp",
+  author = "Sabrina Xi",
+  note = "Unpublished",
+  year = "2025",
+  textVersion = paste("Xi S. (2025) TransComp. Unpublished. URL:https://github.com/xsabrin/TransComp.")
+)
