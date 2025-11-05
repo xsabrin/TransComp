@@ -1,23 +1,23 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# transComp
+# TransComp
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 ## Description
 
-The goal of transComp is to identify possible transcripts based on
+The goal of TransComp is to identify possible transcripts based on
 genomic coordinates for given genes in a dataset and create graphical
 outputs for this. It can also be used to identify the composition of
-canonical transcripts in your dataset. transComp aims to add to the
+canonical transcripts in your dataset. TransComp aims to add to the
 current bioinformatics field by providing a fast and automated method of
 identifying transcripts in datasets and comparing between datasets.
 
 ## Installation
 
-You can install the development version of transComp like so:
+You can install the development version of TransComp like so:
 
 ``` r
 install.packages("devtools")
