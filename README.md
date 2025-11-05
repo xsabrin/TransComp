@@ -52,15 +52,6 @@ browseVignettes("TestingPackage")
 
 5.  ***CompTransc*** for identifying same transcripts in two datasets.
 
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(transComp)
-#> Warning: replacing previous import 'biomaRt::select' by 'dplyr::select' when
-#> loading 'transComp'
-## basic example code
-```
-
 ## Contributions
 
 This package was developed by Sabrina Xi. Reference data was taken from
