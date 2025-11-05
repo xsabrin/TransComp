@@ -9,7 +9,7 @@
 #' @returns Returns a plot of transcript composition.
 #'
 #' @examples
-#' canPlot <- plotTransCan(formattedData, "test data)
+#' canPlot <- plotTransCan(formattedData, "test data")
 #' canPlot
 #'
 #' @references

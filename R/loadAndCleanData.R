@@ -96,8 +96,7 @@ loadAndCleanData <- function(transFile = NA) {
                                            'ensembl_gene_id', values = gene, mart = ensembl)
 
       # merge corresponding possible exon IDs with genomic start and stop coordinates for each datasets
-      transData <- merge(x = transData, y = ensembldbValues, all.x = TRUE)
-      print(transData)
+      transData <- merge(x = transData, y = ensembldbValues, by = c("exon_chrom_start", "exon_chrom_end", "ensembl_gene_id", "ensembl_transcript_id"), all.x = TRUE)
     }
   }
 
