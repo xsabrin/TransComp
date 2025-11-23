@@ -93,3 +93,9 @@ We can also identify possible transcripts for a specified gene and sample, and t
 ```{r, }
 transComp::TransComp(formattedData)
 ```
+
+
+## Session Info
+```{r}
+sessionInfo()
+```
