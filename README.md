@@ -108,8 +108,8 @@ Grammar of Data Manipulation*. <doi:10.32614/CRAN.package.dplyr>
 
 ## Acknowledgments
 
-This package was developed as part of an assessment for 2023 BCB410H:
-Applied Bioinformatics course at the University of Toronto, Toronto,
-CANADA. CovidWasteWatch welcomes issues, enhancement requests, and other
-contributions. To submit an issue, use the GitHub issues. Many thanks to
-those who provided feedback to improve this package.
+This package was developed as part of an assessment for the 2025
+BCB410H: Applied Bioinformatics course at the University of Toronto,
+Toronto, CANADA. TransComp welcomes issues, enhancement requests, and
+other contributions. To submit an issue, use the GitHub issues. Many
+thanks to those who provided feedback to improve this package.
