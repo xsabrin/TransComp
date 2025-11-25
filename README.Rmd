@@ -41,6 +41,9 @@ ls("package:transComp")
 data(package = "transComp") 
 browseVignettes("transComp")
 ```
+A package overview if provided below:
+
+![](./inst/extdata/package_overview.png)
 
 `TransComp` contains 5 user-accessible functions. 
 
