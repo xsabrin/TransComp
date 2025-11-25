@@ -26,7 +26,11 @@ devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
 library("transComp")
 ```
 
-To run the shinyApp: Under construction
+To run the shinyApp:
+
+``` r
+runTransComp()
+```
 
 ## Overview
 
