@@ -31,10 +31,14 @@ To run the shinyApp: Under construction
 ## Overview
 
 ``` r
-ls("package:TestingPackage")
-data(package = "TestingPackage") 
-browseVignettes("TestingPackage")
+ls("package:transComp")
+data(package = "transComp") 
+browseVignettes("transComp")
 ```
+
+A package overview if provided below:
+
+![](./inst/extdata/bcb410_figure.png)
 
 `TransComp` contains 5 user-accessible functions.
 
