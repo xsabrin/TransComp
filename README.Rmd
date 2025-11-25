@@ -69,9 +69,14 @@ Bache S, Wickham H (2025). _magrittr: A Forward-Pipe Operator for R_. doi:10.326
   <https://doi.org/10.32614/CRAN.package.magrittr>, R package version 2.0.4,
   <https://CRAN.R-project.org/package=magrittr>.
 
-BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
-  Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
-  (2005).
+BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck, Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440 (2005).
+
+BioRender. (2025). Image created by Xi, S. Retrieved November 28, 2025, from https://app.biorender.com/
+
+Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
+  J, Dipert A, Borges B (2025). _shiny: Web Application Framework for R_.
+  doi:10.32614/CRAN.package.shiny <https://doi.org/10.32614/CRAN.package.shiny>,
+  R package version 1.11.1, <https://CRAN.R-project.org/package=shiny>.
 
 Dyer C Sarah et al. Ensembl 2025. Nucleic Acids Res. 2025, 53(D1):D948–D957. PMID: 39656687. doi:10.1093/nar/gkae1071
 
