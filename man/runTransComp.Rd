@@ -2,7 +2,7 @@
 % Please edit documentation in R/runTransComp.R
 \name{runTransComp}
 \alias{runTransComp}
-\title{Launch Shiny App for TestingPackage}
+\title{Launch Shiny App for TransComp}
 \usage{
 runTransComp()
 }

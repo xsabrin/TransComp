@@ -31,9 +31,11 @@ ui <- fluidPage(
       br(),
 
       # input
-      tags$p("Instructions: Below, enter or select values required to perform the analysis. Default
-             values are shown. Then press 'Run'. Navigate through
-             the different tabs to the right to explore the results."),
+      tags$p("Instructions: Upload the dataset you want analyzed, or use the example
+              dataset provided. Select whether you want the transcript composition
+              table or the canonical transcript table displayed, or both. If both
+              options are 'No', then the plot of the canonical transcript composition
+              will be displayed. Then press 'Run' to see your desired result."),
 
       # br() element to introduce extra vertical spacing ----
       br(),
@@ -41,13 +43,24 @@ ui <- fluidPage(
       # input
       shinyalert::useShinyalert(force = TRUE),  # Set up shinyalert
       uiOutput("tab1"),
+      uiOutput("tab2"),
       br(),
       fileInput(inputId = "file1",
                 label = "Select an transcript dataset to visualize.
                 File should be in .csv format with gene and exon ID, genomic coordinates, and sample numbers.",
                 accept = c(".csv")),
+      fileInput(inputId = "file2",
+                label = "(Optional) Select an transcript dataset to visualize if want to compare both datasets.
+                File should be in .csv format with gene and exon ID, genomic coordinates, and sample numbers.",
+                accept = c(".csv")),
       textInput(inputId = "plotName",
                 label = "Enter the name you would like the plot to be titled:", "Example"),
+      selectInput(inputId = "inTC",
+                  label = "Would you like to see the transcript composition data?",
+                  choices = c("Yes", "No"), selected = "Yes"),
+      selectInput(inputId = "inCT",
+                  label = "Would you like to see the canonical transcript data?",
+                  choices = c("Yes", "No"), selected = "Yes"),
 
 
       # br() element to introduce extra vertical spacing ----
@@ -55,16 +68,18 @@ ui <- fluidPage(
 
       # actionButton
       actionButton(inputId = "button1",
-                   label = "Run"),
+                   label = "Run")
 
     ),
 
-    # Main panel for displaying outputs ----
+    # Main Panel for Display Outputs -----
     mainPanel(
       h4("Data overview"),
-      verbatimTextOutput("textOutOverview"),
+      DT::DTOutput("outComm"),
+      plotOutput("plot"),
+      DT::DTOutput("outTC"),
       br(),
-      plotOutput("plot")
+      DT::DTOutput("outCT")
     )
 
   )
@@ -73,9 +88,32 @@ ui <- fluidPage(
 # Define server logic for random distribution app ----
 server <- function(input, output) {
 
+  # URLs for downloading data
+  url1 <- a("Example BRCA2 and TP53 Transcript Dataset",
+            href="https://raw.githubusercontent.com/xsabrin/TransComp/master/inst/extdata/example_data.csv"
+  )
+  output$tab1 <- renderUI({
+    tagList("Download Example Dataset:", url1)
+  })
+
+  # URLs for downloading data
+  url2 <- a("Example BRCA2 Transcript Dataset",
+            href="https://raw.githubusercontent.com/xsabrin/TransComp/master/inst/extdata/example_data2.csv"
+  )
+  output$tab2 <- renderUI({
+    tagList("Download Example Dataset:", url2)
+  })
+
   # Load and get data overview for the input data type
   results <- eventReactive(eventExpr = input$button1, {
     transComp::loadAndCleanData(transFile = input$file1$datapath)
+  })
+
+  # Load and get data overview for the input data type
+  results2 <- eventReactive(eventExpr = input$button1, {
+    if (!is.null(input$file2$datapath)) {
+      transComp::loadAndCleanData(transFile = input$file2$datapath)
+    }
   })
 
   # Get plot name
@@ -85,21 +123,31 @@ server <- function(input, output) {
   # Output data overview and plot
   observeEvent(input$button1, {
     req(results())
-    if (!is.null(results())) {
-      output$plot <- renderPlot({
-        if (!is.null(results())) {
-          transComp::plotTransCan(results(), "none")
-        }
-      })
-    }
-  })
+    if (!is.null(results2())) {
+      output$outComm <- renderDataTable({data.frame("Common Transcripts"=transComp::CompTransc(results(), results2()))})
+    } else {
+      if (!is.null(results())) {
+        if (input$inTC == "No" && input$inCT == "No") {
+          # only get plot if don't get tables
+          output$plot <- renderPlot({
+            if (!is.null(results())) {
+              transComp::plotTransCan(results(), "none")
+            }
+          })
+        } else if (input$inTC == "Yes" && input$inCT == "Yes") {
+          # get transcripts
+          output$outTC <- renderDataTable({transComp::TransComp(results())})
 
-  # URLs for downloading data
-  url1 <- a("Example BRCA2 and TP53 Transcript Dataset",
-            href="https://raw.githubusercontent.com/xsabrin/TransComp/master/inst/extdata/example_data.csv"
-  )
-  output$tab1 <- renderUI({
-    tagList("Download Example Dataset:", url1)
+          # get canonical transcripts
+          output$outCT <- renderDataTable({data.frame("ensembl_gene_id"=transComp::CanTrans(results()))})
+
+        } else if (input$inTC == "Yes" && input$inCT == "No") {
+          output$outTC <- renderDataTable({transComp::TransComp(results())})
+        } else if (input$inCT == "Yes" && input$inTC == "No") {
+          output$outCT <- renderDataTable({data.frame("ensembl_gene_id"=transComp::CanTrans(results()))})
+        }
+      }
+    }
   })
 
 }
