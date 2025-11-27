@@ -77,7 +77,7 @@ Using this formatted dataset, you can manipulate the data to look at various ele
 CanTrans(formattedData)
 ``` 
 
-To visualize these results, you may use *PlotCanTrans* function. To read more about *PlotCanTrans* function, see:
+To visualize these results, you may use *PlotCanTrans* function. *PlotCanTrans* plots the proportion of canonical transcripts in your dataset, calculated as in *CanTrans*. This relative proportion is visualized using two different colors for every different gene in your dataset. To read more about *PlotCanTrans* function, see:
 
 ```{r, }
 ?transComp::PlotTransCan
