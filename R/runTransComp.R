@@ -1,4 +1,10 @@
-#' Launch Shiny App for TestingPackage
+# Purpose: Launch the Shiny App
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
+#' Launch Shiny App for TransComp
 #'
 #' A function that launches the Shiny app for TransComp
 #' The purpose of this app is to provide an interactive interface for the user
@@ -29,4 +35,5 @@ runTransComp <- function() {
 
   return(actionShiny)
 }
+
 # [END]

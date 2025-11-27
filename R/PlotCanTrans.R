@@ -1,3 +1,9 @@
+# Purpose: Plot the Canonical Transcript Composition
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
 #' Plot Canonical Transcript Composition.
 #'
 #' Plot the canonical transcript composition of this dataset based on transcripts
@@ -60,3 +66,5 @@ plotTransCan <- function(transData, datasetName) {
 
   return(plot)
 }
+
+# [END]

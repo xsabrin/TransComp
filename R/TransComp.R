@@ -1,3 +1,9 @@
+# Purpose: Code for Different Transcript Composition Functions
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
 #' Identify Gene Transcripts Based on Genomic Coordinates
 #'
 #' Identify the transcript composition of a given dataset, given multiple sequencing reads of a gene.
@@ -13,8 +19,8 @@
 #'
 #' @references
 #' Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data Manipulation_.
-# doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
-# <https://CRAN.R-project.org/package=dplyr>.
+#'  doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
+#'  <https://CRAN.R-project.org/package=dplyr>.
 #'
 #' @export
 #'
@@ -27,6 +33,8 @@ TransComp <- function(transData) {
   } else if (!("sample" %in% colnames(transData))) {
     stop("Dataset not properly formatted, please include identifiers.")
   }
+
+  print("hello")
 
   diff_exp <- dplyr::distinct(transData, ensembl_gene_id, sample)
   gene_transcripts <- data.frame(ensembl_gene_id = character(), ensembl_transcript_id = character())
@@ -141,3 +149,5 @@ CompTransc <- function(transComp1, transComp2) {
 
   return(overl_trans)
 }
+
+# [END]

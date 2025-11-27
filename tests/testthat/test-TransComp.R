@@ -8,3 +8,5 @@ test_that("TransComp() returns the correct result", {
   test <- result$ensembl_transcript_id
   testthat::expect_equal(test[1], "ENST00000380152")
 })
+
+# [END]

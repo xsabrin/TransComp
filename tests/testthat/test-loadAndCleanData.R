@@ -6,3 +6,5 @@ test_that("loadAndCleanData() returns the correct output", {
   testData <- loadAndCleanData(filepath)
   testthat::expect_length(testData, 7)
 })
+
+# [END]

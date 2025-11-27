@@ -7,3 +7,5 @@ test_that("CanTrans() returns the correct canonical transcript", {
   canonical_transcript <- CanTrans(formattedData)
   testthat::expect_equal(canonical_transcript, c("ENSG00000141510", "ENSG00000139618"))
 })
+
+# [END]

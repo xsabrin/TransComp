@@ -1,3 +1,9 @@
+# Purpose: Clean the Dataset for Later Functions
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
 #' Load and Clean a Given Dataset
 #'
 #' Given a file, load and clean the dataset so that it contains standardized ensembl
@@ -105,3 +111,5 @@ loadAndCleanData <- function(transFile = NA) {
 
   return(transData)
 }
+
+# [END]

@@ -1,3 +1,9 @@
+# Purpose: Provide Example Datasets
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
 #' Example BRCA2 and TP53 Dataframe
 #'
 #' A dataframe of gene and genomic coordinate data from Ensembl for BRCA2 and TP53.

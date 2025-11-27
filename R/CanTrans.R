@@ -1,3 +1,9 @@
+# Purpose: Identify Canonical Transcript Composition
+# Author: Sabrina Xi
+# Date: 2025-11-25
+# Version: 0.2.0
+# Bugs and Issues: None
+
 #' Identify a Dataset's Canonical Transcript Composition
 #'
 #' Identify the composition of canonical transcripts of a dataset from its exon composition.
@@ -52,3 +58,5 @@ CanTrans <- function(transData) {
 
   return(unique(canonGenes$ensembl_gene_id))
 }
+
+# [END]
