@@ -13,10 +13,11 @@ genomic coordinates for given genes in a dataset and create graphical
 outputs for this. It can also be used to identify the composition of
 canonical transcripts in your dataset. In order to do so, it takes in
 genetic datasets containing genomic coordinates read from your samples
-and their corresponding genes. TransComp aims to add to the current
-bioinformatics field by providing a fast and automated method of
-identifying transcripts in datasets and comparing between datasets,
-which is currently lacking.
+and their corresponding genes.
+
+TransComp aims to add to the current bioinformatics field by providing a
+fast and automated method of identifying transcripts in datasets and
+comparing between datasets, which is currently lacking.
 
 ## Installation
 
@@ -27,6 +28,14 @@ install.packages("devtools")
 library("devtools")
 devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
 library("transComp")
+```
+
+Some imported packages are not on CRAN. In case of failure of
+installation, you can install these like so and then install the
+package:
+
+``` r
+BiocManager::install(c("biocViews", "biomaRt"))
 ```
 
 To run the shinyApp:
@@ -79,6 +88,11 @@ Every function was developed by Sabrina Xi.
 
 ## References
 
+Attali D, Edwards T (2024). *shinyalert: Easily Create Pretty Popup
+Messages (Modals) in ‘Shiny’*. <doi:10.32614/CRAN.package.shinyalert>
+<https://doi.org/10.32614/CRAN.package.shinyalert>, R package version
+3.1.0, <https://CRAN.R-project.org/package=shinyalert>.
+
 Bache S, Wickham H (2025). *magrittr: A Forward-Pipe Operator for R*.
 <doi:10.32614/CRAN.package.magrittr>
 <https://doi.org/10.32614/CRAN.package.magrittr>, R package version
@@ -116,6 +130,11 @@ Wickham H, François R, Henry L, Müller K, Vaughan D (2023). *dplyr: A
 Grammar of Data Manipulation*. <doi:10.32614/CRAN.package.dplyr>
 <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
 <https://CRAN.R-project.org/package=dplyr>.
+
+Xie Y, Cheng J, Tan X, Aden-Buie G (2025). *DT: A Wrapper of the
+JavaScript Library ‘DataTables’*. <doi:10.32614/CRAN.package.DT>
+<https://doi.org/10.32614/CRAN.package.DT>, R package version 0.34.0,
+<https://CRAN.R-project.org/package=DT>.
 
 ## Acknowledgments
 
