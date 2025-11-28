@@ -36,7 +36,7 @@
 #' @import ggplot2
 #' @import biomaRt
 #' @importFrom dplyr mutate
-plotTransCan <- function(transData, datasetName) {
+plotTransCan <- function(transData, datasetName=NA) {
 
   # check that the input dataset has a list of exon and gene IDs
   if (!("ensembl_gene_id" %in% colnames(transData))) {

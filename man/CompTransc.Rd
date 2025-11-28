@@ -12,11 +12,12 @@ CompTransc(transComp1, transComp2)
 \item{transComp2}{a second dataset containing a list of genes and their exons}
 }
 \value{
-Returns a list of genes that show overlap in transcripts. If there are none, an empty list will be returned.
+Returns a list of genes that show overlap in transcripts.
+If there are none, an empty list will be returned.
 }
 \description{
-For each common gene in dataset1 and dataset2, identify whether they could be looking at the same
-transcript based on the genetic coordinates listed.
+For each common gene in dataset1 and dataset2, identify whether they could be
+looking at the same transcript based on the genetic coordinates listed.
 }
 \examples{
 overlapping_transcripts <- CompTransc(formattedData, secondExample)

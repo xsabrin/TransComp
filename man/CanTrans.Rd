@@ -21,7 +21,7 @@ canonical_transcripts
 
 }
 \references{
-BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
-Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
-(2005).
+BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis.
+Steffen Durinck, Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor,
+Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440 (2005).
 }

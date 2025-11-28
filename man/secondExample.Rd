@@ -35,6 +35,7 @@ for function "CompTransc".
 }
 }
 \references{
-Dyer C Sarah et al. Ensembl 2025. Nucleic Acids Res. 2025, 53(D1):D948–D957. PMID: 39656687. doi:10.1093/nar/gkae1071
+Dyer C Sarah et al. Ensembl 2025. Nucleic Acids Res. 2025,
+53(D1):D948–D957. PMID: 39656687. doi:10.1093/nar/gkae1071
 }
 \keyword{datasets}

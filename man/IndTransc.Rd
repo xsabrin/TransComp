@@ -15,9 +15,11 @@ IndTransc(dataset1, geneID = NA, sample = NA)
 }
 \value{
 Returns the transcript this sampled gene could have been sequenced
-from or a list if there are multiple possibilities. If there are none, it will return an empty list.
+from or a list if there are multiple possibilities. If there are none,
+it will return an empty list.
 }
 \description{
-Identify which transcript of a gene the given genomic coordinates belong to. These should
-be grouped by sequenced transcript. This function is not available to the user.
+Identify which transcript of a gene the given genomic coordinates belong to.
+These should be grouped by sequenced transcript.
+This function is not available to the user.
 }
