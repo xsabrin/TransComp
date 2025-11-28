@@ -4,7 +4,7 @@
 \alias{plotTransCan}
 \title{Plot Canonical Transcript Composition.}
 \usage{
-plotTransCan(transData, datasetName)
+plotTransCan(transData, datasetName = NA)
 }
 \arguments{
 \item{transData}{a dataframe containing ensembl gene, transcript, and exon IDs.}

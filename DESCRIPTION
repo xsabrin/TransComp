@@ -13,9 +13,11 @@ Imports:
     biocViews,
     biomaRt,
     dplyr,
+    DT,
     ggplot2,
     magrittr,
     shiny,
+    shinyalert,
     stats,
     stringr,
     utils

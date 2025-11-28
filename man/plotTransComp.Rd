@@ -4,7 +4,7 @@
 \alias{plotTransComp}
 \title{Plot Transcript Composition.}
 \usage{
-plotTransComp(transData, datasetName)
+plotTransComp(transData, datasetName = NA)
 }
 \arguments{
 \item{transData}{a dataframe containing ensembl gene, transcript, and exon IDs.}

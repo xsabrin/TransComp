@@ -27,6 +27,8 @@
 #' @export
 #'
 #' @importFrom shiny runApp
+#' @import shinyalert
+#' @import DT
 
 runTransComp <- function() {
   appDir <- system.file("shiny-scripts",
