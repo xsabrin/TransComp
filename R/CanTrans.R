@@ -17,9 +17,9 @@
 #' canonical_transcripts
 #'
 #' @references
-#' BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis. Steffen Durinck,
-#' Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440
-#' (2005).
+#' BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis.
+#' Steffen Durinck, Yves Moreau, Arek Kasprzyk, Sean Davis, Bart De Moor,
+#' Alvis Brazma and Wolfgang Huber, Bioinformatics 21, 3439-3440 (2005).
 #'
 #' @export
 #'
@@ -39,7 +39,8 @@ CanTrans <- function(transData) {
   # load ensembl database
   ensembl <- biomaRt::useEnsembl(biomart="ensembl", dataset="hsapiens_gene_ensembl")
 
-  # if this dataset does not contain each exon's corresponding transcript and canonical status, add to dataframe
+  # if this dataset does not contain each exon's corresponding transcript and
+  # canonical status, add to dataframe
   if (!("ensembl_transcript_id" %in% colnames(transData))) {
     exons <- unique(transData$ensembl_exon_id)
 
@@ -51,10 +52,15 @@ CanTrans <- function(transData) {
     dataset <- merge(x = transData, y = ensembldbValues, by="ensembl_exon_id")
   }
 
-  canonicalTransc <- biomaRt::getBM(attributes=c("ensembl_transcript_id", "ensembl_gene_id"), filters =
-                                      c('ensembl_gene_id', "transcript_is_canonical"), values = list('ensembl_gene_id'=genes, 'transcript_is_canonical'=TRUE), mart = ensembl)
+  canonicalTransc <- biomaRt::getBM(attributes=c("ensembl_transcript_id",
+                                                 "ensembl_gene_id"), filters =
+                                      c('ensembl_gene_id', "transcript_is_canonical"),
+                                    values = list('ensembl_gene_id'=genes,
+                                                  'transcript_is_canonical'=TRUE),
+                                    mart = ensembl)
 
-  canonGenes <- merge(x=canonicalTransc, y=dataset, by=c("ensembl_transcript_id", "ensembl_gene_id"), all=FALSE)
+  canonGenes <- merge(x=canonicalTransc, y=dataset, by=c("ensembl_transcript_id",
+                                                         "ensembl_gene_id"), all=FALSE)
 
   return(unique(canonGenes$ensembl_gene_id))
 }

@@ -6,7 +6,8 @@
 
 #' Identify Gene Transcripts Based on Genomic Coordinates
 #'
-#' Identify the transcript composition of a given dataset, given multiple sequencing reads of a gene.
+#' Identify the transcript composition of a given dataset, given multiple
+#' sequencing reads of a gene.
 #'
 #' @param transData a dataframe containing the ensembl transcript, exon, and gene IDs.
 #'  It should also include a column identifying grouped exons.
@@ -18,9 +19,10 @@
 #' canonical_transcripts
 #'
 #' @references
-#' Wickham H, François R, Henry L, Müller K, Vaughan D (2023). _dplyr: A Grammar of Data Manipulation_.
-#'  doi:10.32614/CRAN.package.dplyr <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
-#'  <https://CRAN.R-project.org/package=dplyr>.
+#' Wickham H, François R, Henry L, Müller K, Vaughan D (2023).
+#' _dplyr: A Grammar of Data Manipulation_. doi:10.32614/CRAN.package.dplyr
+#' <https://doi.org/10.32614/CRAN.package.dplyr>, R package version 1.1.4,
+#' <https://CRAN.R-project.org/package=dplyr>.
 #'
 #' @export
 #'
@@ -35,7 +37,8 @@ TransComp <- function(transData) {
   }
 
   diff_exp <- dplyr::distinct(transData, ensembl_gene_id, sample)
-  gene_transcripts <- data.frame(ensembl_gene_id = character(), ensembl_transcript_id = character())
+  gene_transcripts <- data.frame(ensembl_gene_id = character(),
+                                 ensembl_transcript_id = character())
 
   for (i in 1:nrow(diff_exp)) {
 
@@ -55,15 +58,17 @@ TransComp <- function(transData) {
 
 #' Identify Gene Transcript Based on Genomic Coordinates
 #'
-#' Identify which transcript of a gene the given genomic coordinates belong to. These should
-#' be grouped by sequenced transcript. This function is not available to the user.
+#' Identify which transcript of a gene the given genomic coordinates belong to.
+#' These should be grouped by sequenced transcript.
+#' This function is not available to the user.
 #'
 #' @param geneID the ensembl gene ID of the target gene.
 #' @param dataset1 a dataframe containing the ensembl exon and transcript IDs.
 #' @param sample the sample number.
 #'
 #' @returns Returns the transcript this sampled gene could have been sequenced
-#'  from or a list if there are multiple possibilities. If there are none, it will return an empty list.
+#'  from or a list if there are multiple possibilities. If there are none,
+#'  it will return an empty list.
 
 IndTransc <- function(dataset1, geneID = NA, sample = NA) {
   # separate each exon into a different dataframe and merge these dataframes together
@@ -94,7 +99,8 @@ IndTransc <- function(dataset1, geneID = NA, sample = NA) {
     # if common_transcripts isn't empty, merge by transcript ID
     if (nrow(common_transcripts) != 0) {
       curr_sub <- dataset1[dataset1$ensembl_exon_id == diff_exons[i], ]
-      common_transcripts <- merge(x = common_transcripts, y = curr_sub, by="ensembl_transcript_id")
+      common_transcripts <- merge(x = common_transcripts, y = curr_sub,
+                                  by="ensembl_transcript_id")
     } else {
       break
     }
@@ -112,13 +118,14 @@ IndTransc <- function(dataset1, geneID = NA, sample = NA) {
 
 #' Identify If Two Datasets Could Look at Same Transcript
 #'
-#' For each common gene in dataset1 and dataset2, identify whether they could be looking at the same
-#' transcript based on the genetic coordinates listed.
+#' For each common gene in dataset1 and dataset2, identify whether they could be
+#' looking at the same transcript based on the genetic coordinates listed.
 #'
 #' @param transComp1 a dataset containing a list of genes and their exons
 #' @param transComp2 a second dataset containing a list of genes and their exons
 #'
-#' @returns Returns a list of genes that show overlap in transcripts. If there are none, an empty list will be returned.
+#' @returns Returns a list of genes that show overlap in transcripts.
+#' If there are none, an empty list will be returned.
 #'
 #' @examples
 #' overlapping_transcripts <- CompTransc(formattedData, secondExample)
@@ -128,9 +135,13 @@ IndTransc <- function(dataset1, geneID = NA, sample = NA) {
 
 CompTransc <- function(transComp1, transComp2) {
 
-  if (!("ensembl_gene_id" %in% colnames(transComp1)) || !("ensembl_exon_id" %in% colnames(transComp1)) || !("sample" %in% colnames(transComp1))) {
+  if (!("ensembl_gene_id" %in% colnames(transComp1)) ||
+      !("ensembl_exon_id" %in% colnames(transComp1)) ||
+      !("sample" %in% colnames(transComp1))) {
     stop("Dataset 1 is not properly formatted.")
-  } else if (!("ensembl_gene_id" %in% colnames(transComp2)) || !("ensembl_exon_id" %in% colnames(transComp2)) || !("sample" %in% colnames(transComp2))) {
+  } else if (!("ensembl_gene_id" %in% colnames(transComp2)) ||
+             !("ensembl_exon_id" %in% colnames(transComp2)) ||
+             !("sample" %in% colnames(transComp2))) {
     stop("Dataset 2 is not properly formatted.")
   }
 

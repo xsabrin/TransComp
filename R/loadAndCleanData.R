@@ -57,7 +57,8 @@ loadAndCleanData <- function(transFile = NA) {
   ensembl <- biomaRt::useEnsembl(biomart="ensembl", dataset="hsapiens_gene_ensembl")
   filters <- biomaRt::listFilters(ensembl)
 
-  # pre-process data: if a source for the gene name is included, standardize to ensembl stable gene ID
+  # pre-process data: if a source for the gene name is included, standardize to
+  # ensembl stable gene ID
   # if not, check that the genes are given using ensembl gene ID
   if (("geneSource" %in% colnames(transData)) && !("geneIds" %in% colnames(transData))) {
     sources <- unique(transData$geneSource)
@@ -101,11 +102,20 @@ loadAndCleanData <- function(transFile = NA) {
     # for every different gene, find the corresponding ensembl transcripts and exons
     for (gene in genes) {
       # load the possible transcripts and corresponding exons for this gene
-      ensembldbValues <- biomaRt::getBM(attributes=c("ensembl_gene_id", "ensembl_transcript_id", "ensembl_exon_id", "exon_chrom_start", "exon_chrom_end"), filters =
+      ensembldbValues <- biomaRt::getBM(attributes=c("ensembl_gene_id",
+                                                     "ensembl_transcript_id",
+                                                     "ensembl_exon_id",
+                                                     "exon_chrom_start",
+                                                     "exon_chrom_end"),
+                                        filters =
                                            'ensembl_gene_id', values = gene, mart = ensembl)
 
       # merge corresponding possible exon IDs with genomic start and stop coordinates for each datasets
-      transData <- merge(x = transData, y = ensembldbValues, by = c("exon_chrom_start", "exon_chrom_end", "ensembl_gene_id", "ensembl_transcript_id"), all.x = TRUE)
+      transData <- merge(x = transData, y = ensembldbValues, by = c("exon_chrom_start",
+                                                                    "exon_chrom_end",
+                                                                    "ensembl_gene_id",
+                                                                    "ensembl_transcript_id"),
+                         all.x = TRUE)
     }
   }
 
