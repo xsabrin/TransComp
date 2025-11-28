@@ -22,6 +22,11 @@ transComp::runTransComp()
 
 }
 \references{
+Attali D, Edwards T (2024). \emph{shinyalert: Easily Create Pretty Popup Messages
+(Modals) in 'Shiny'}. doi:10.32614/CRAN.package.shinyalert
+\url{https://doi.org/10.32614/CRAN.package.shinyalert}, R package version 3.1.0,
+\url{https://CRAN.R-project.org/package=shinyalert}.
+
 Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
 J, Dipert A, Borges B (2025). \emph{shiny: Web Application Framework for R}.
 doi:10.32614/CRAN.package.shiny \url{https://doi.org/10.32614/CRAN.package.shiny},
