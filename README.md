@@ -47,7 +47,7 @@ A package overview is provided below:
 
 ![](./inst/extdata/bcb410_figure.png)
 
-`TransComp` contains 5 user-accessible functions.
+`TransComp` contains 6 user-accessible functions.
 
 1.  ***LoadAndCleanData*** for loading and cleaning a given dataset into
     a standardized format that can be used by the rest of the functions.
@@ -61,15 +61,19 @@ A package overview is provided below:
 4.  ***TransComp*** for identifying the transcript composition of your
     dataset.
 
-5.  ***CompTransc*** for identifying same transcripts in two datasets.
+5.  ***PlotTransComp*** for plotting the transcript composition of your
+    dataset.
+
+6.  ***CompTransc*** for identifying same transcripts in two datasets.
 
 ## Contributions
 
 This package was developed by Sabrina Xi. Reference data was taken from
-ensembl using the package ‘biomart’, data was formatted using ‘dplyr’
-and the pipe operation developed by ‘magrittr’, and ‘ggplot2’ was used
-to develop plots’. Fundamental R packages ‘utils’ and ‘stats’ were also
-used to format and clean data.
+ensembl using the package ‘biomart’ to add additional transcript and
+exon data, data was formatted using ‘dplyr’ and the pipe operation
+developed by ‘magrittr’, and ‘ggplot2’ was used to develop plots.
+Fundamental R packages ‘utils’ and ‘stats’ were also used to format and
+clean data.
 
 Every function was developed by Sabrina Xi.
 
@@ -85,9 +89,6 @@ and microarray data analysis. Steffen Durinck, Yves Moreau, Arek
 Kasprzyk, Sean Davis, Bart De Moor, Alvis Brazma and Wolfgang Huber,
 Bioinformatics 21, 3439-3440 (2005).
 
-BioRender. (2025). Image created by Xi, S. Retrieved November 28, 2025,
-from <https://app.biorender.com/>
-
 Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J,
 McPherson J, Dipert A, Borges B (2025). *shiny: Web Application
 Framework for R*. <doi:10.32614/CRAN.package.shiny>
@@ -96,6 +97,9 @@ Framework for R*. <doi:10.32614/CRAN.package.shiny>
 
 Dyer C Sarah et al. Ensembl 2025. Nucleic Acids Res. 2025,
 53(D1):D948–D957. PMID: 39656687. <doi:10.1093/nar/gkae1071>
+
+PNGTree. “Cartoon Dna Strand PNG, Vector And Transparent Clipart
+Images”. Accessed: November 20, 2025. <https://pngtree.com/>
 
 R Core Team (2025). *R: A Language and Environment for Statistical
 Computing*. R Foundation for Statistical Computing, Vienna, Austria.
