@@ -34,8 +34,6 @@ TransComp <- function(transData) {
     stop("Dataset not properly formatted, please include identifiers.")
   }
 
-  print("hello")
-
   diff_exp <- dplyr::distinct(transData, ensembl_gene_id, sample)
   gene_transcripts <- data.frame(ensembl_gene_id = character(), ensembl_transcript_id = character())
 
