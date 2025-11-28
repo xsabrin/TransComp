@@ -24,6 +24,12 @@
 #' doi:10.32614/CRAN.package.shiny <https://doi.org/10.32614/CRAN.package.shiny>,
 #' R package version 1.11.1, <https://CRAN.R-project.org/package=shiny>.
 #'
+#' Xie Y, Cheng J, Tan X, Aden-Buie G (2025). _DT: A Wrapper of the JavaScript
+#' Library 'DataTables'_. doi:10.32614/CRAN.package.DT
+#' <https://doi.org/10.32614/CRAN.package.DT>, R package version 0.34.0,
+#' <https://CRAN.R-project.org/package=DT>.
+#'
+#'
 #' @export
 #'
 #' @importFrom shiny runApp

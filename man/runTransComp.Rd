@@ -26,4 +26,9 @@ Chang W, Cheng J, Allaire J, Sievert C, Schloerke B, Xie Y, Allen J, McPherson
 J, Dipert A, Borges B (2025). \emph{shiny: Web Application Framework for R}.
 doi:10.32614/CRAN.package.shiny \url{https://doi.org/10.32614/CRAN.package.shiny},
 R package version 1.11.1, \url{https://CRAN.R-project.org/package=shiny}.
+
+Xie Y, Cheng J, Tan X, Aden-Buie G (2025). \emph{DT: A Wrapper of the JavaScript
+Library 'DataTables'}. doi:10.32614/CRAN.package.DT
+\url{https://doi.org/10.32614/CRAN.package.DT}, R package version 0.34.0,
+\url{https://CRAN.R-project.org/package=DT}.
 }

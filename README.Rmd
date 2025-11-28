@@ -20,7 +20,9 @@ knitr::opts_chunk$set(
 
 ## Description
 
-The goal of TransComp is to identify possible transcripts based on genomic coordinates for given genes in a dataset and create graphical outputs for this. It can also be used to identify the composition of canonical transcripts in your dataset. In order to do so, it takes in genetic datasets containing genomic coordinates read from your samples and their corresponding genes. TransComp aims to add to the current bioinformatics field by providing a fast and automated method of identifying transcripts in datasets and comparing between datasets, which is currently lacking. 
+The goal of TransComp is to identify possible transcripts based on genomic coordinates for given genes in a dataset and create graphical outputs for this. It can also be used to identify the composition of canonical transcripts in your dataset. In order to do so, it takes in genetic datasets containing genomic coordinates read from your samples and their corresponding genes. 
+
+TransComp aims to add to the current bioinformatics field by providing a fast and automated method of identifying transcripts in datasets and comparing between datasets, which is currently lacking. 
 
 ## Installation
 
@@ -32,6 +34,12 @@ library("devtools")
 devtools::install_github("xsabrin/TransComp", build_vignettes = TRUE)
 library("transComp")
 ```
+
+Some imported packages are not on CRAN. In case of failure of installation, you can install these like so and then install the package:
+``` r 
+BiocManager::install(c("biocViews", "biomaRt"))
+```
+
 To run the shinyApp: 
 ``` r
 runTransComp()
