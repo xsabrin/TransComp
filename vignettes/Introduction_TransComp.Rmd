@@ -94,6 +94,12 @@ We can also identify possible transcripts for a specified gene and sample, and t
 transComp::TransComp(formattedData)
 ```
 
+The results from TransComp can be plotted using *PlotTransComp* to display the count of transcripts for each gene:
+
+```{r}
+transComp::plotTransComp(formattedData, "Example")
+```
+
 
 ## Session Info
 ```{r}
