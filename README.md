@@ -15,9 +15,17 @@ canonical transcripts in your dataset. In order to do so, it takes in
 genetic datasets containing genomic coordinates read from your samples
 and their corresponding genes.
 
-TransComp aims to add to the current bioinformatics field by providing a
-fast and automated method of identifying transcripts in datasets and
-comparing between datasets, which is currently lacking.
+Genetic data can be difficult to standardize and subsequently work with
+considering the common presence of mutations, isoforms, and other
+objects that provide different forms of a same gene. Though genetic
+identifiers have seen standardization in recent years such as Ensembl,
+there are still many different labels within Ensembl that can be used
+differently by researchers, creating an issue with comparing data
+between different papers and datasets. TransComp aims to bridge that gap
+and add to the current bioinformatics field by providing a fast and
+automated method of identifying transcripts in datasets using the
+Ensembl classification system in order to facilitate comparison between
+datasets, which is currently lacking.
 
 ## Installation
 
@@ -138,8 +146,7 @@ JavaScript Library ‘DataTables’*. <doi:10.32614/CRAN.package.DT>
 
 ## Acknowledgments
 
-This package was developed as part of an assessment for the 2025
-BCB410H: Applied Bioinformatics course at the University of Toronto,
-Toronto, CANADA. TransComp welcomes issues, enhancement requests, and
-other contributions. To submit an issue, use the GitHub issues. Many
-thanks to those who provided feedback to improve this package.
+This package was developed as part of an assessment for 2025 BCB410H:
+Applied Bioinformatics course at the University of Toronto, Toronto,
+CANADA. TransComp welcomes issues, enhancement requests, and other
+contributions. To submit an issue, use the GitHub issues.
