@@ -7,4 +7,10 @@ test_that("loadAndCleanData() returns the correct output", {
   testthat::expect_length(testData, 7)
 })
 
+# Test that an empty input returns an error
+test_that("loadAndCleanData() returns an error if the input is empty", {
+  filepath <- ""
+  testthat::expect_error(loadAndCleanData(filepath))
+})
+
 # [END]
