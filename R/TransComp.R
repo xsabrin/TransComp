@@ -7,7 +7,8 @@
 #' Identify Gene Transcripts Based on Genomic Coordinates
 #'
 #' Identify the transcript composition of a given dataset, given multiple
-#' sequencing reads of a gene.
+#' sequencing reads of a gene. This function takes in different samples of a gene
+#' and identifies the likely transcripts based on the gene-sample identifiers.
 #'
 #' @param transData a dataframe containing the ensembl transcript, exon, and gene IDs.
 #'  It should also include a column identifying grouped exons.

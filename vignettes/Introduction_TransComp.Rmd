@@ -57,7 +57,7 @@ library(transComp)
 
 To use your own dataset, provide a valid path to a CSV file which includes columns containing the ensembl gene ID or gene name and the genomic coordinates. In this example, we use information taken from Ensembl containing data for two transcripts of BRCA2 and TP53.
 
-Here the function *loadAndCleanData* is a function that standardizes a dataset to include the appropriate column format for later analysis, using IDs derived from ensembl (ensembl, 2025).
+Here the function *loadAndCleanData* is a function that standardizes a dataset to include the appropriate column format for later analysis, using IDs derived from ensembl.
 
 As an example, let's use the *example_data* dataset which contains data for 2 transcripts of BRCA2 and 1 transcript of TP53. The output is saved into the R object *formattedData*.
 
@@ -77,7 +77,7 @@ Using this formatted dataset, you can manipulate the data to look at various ele
 CanTrans(formattedData)
 ``` 
 
-To visualize these results, you may use *PlotCanTrans* function. *PlotCanTrans* plots the proportion of canonical transcripts in your dataset, calculated as in *CanTrans*. This relative proportion is visualized using two different colors for every different gene in your dataset. To read more about *PlotCanTrans* function, see:
+To visualize these results, you may use *PlotCanTrans* function. *PlotCanTrans* plots the proportion of transcripts found for the genomic coordinates in your dataset as canonical, calculated as in *CanTrans*. This relative proportion is visualized using two different colors for every different gene in your dataset. To read more about *PlotCanTrans* function, see:
 
 ```{r, }
 ?transComp::PlotTransCan

@@ -6,8 +6,8 @@
 
 #' Load and Clean a Given Dataset
 #'
-#' Given a file, load and clean the dataset so that it contains standardized ensembl
-#' gene IDs, exon IDs, and transcript IDs.
+#' Given a file with the specified inputs, load and clean the dataset
+#' so that it contains standardized ensembl gene IDs, exon IDs, and transcript IDs.
 #'
 #' @param transFile input csv file. This file should contain genomic coordinates,
 #' and either the ensembl gene ID or both a gene identifier and source.

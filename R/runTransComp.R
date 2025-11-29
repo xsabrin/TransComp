@@ -6,7 +6,7 @@
 
 #' Launch Shiny App for TransComp
 #'
-#' A function that launches the Shiny app for TransComp
+#' A function that launches the Shiny app for TransComp.
 #' The purpose of this app is to provide an interactive interface for the user
 #' to make use of TransComp's functions. The code has been placed in
 #' \code{./inst/shiny-scripts}.

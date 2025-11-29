@@ -6,7 +6,8 @@
 
 #' Identify a Dataset's Canonical Transcript Composition
 #'
-#' Identify the composition of canonical transcripts of a dataset from its exon composition.
+#' Identify possible based on exon composition and return transcripts among them which
+#' are considered the canonical transcript.
 #'
 #' @param transData dataframe containing gene and exon data.
 #'

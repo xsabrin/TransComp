@@ -6,7 +6,8 @@
 
 #' Example BRCA2 and TP53 Dataframe
 #'
-#' A dataframe of gene and genomic coordinate data from Ensembl for BRCA2 and TP53.
+#' A dataframe of gene, transcript, and genomic coordinate data from Ensembl
+#' for BRCA2 and TP53.
 #' This is the expected resulting dataframe when "inst/extdata/example_data.csv"
 #' is used as the input file for function loadAndCleanData.
 #'

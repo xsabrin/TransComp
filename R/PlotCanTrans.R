@@ -7,7 +7,9 @@
 #' Plot Canonical Transcript Composition.
 #'
 #' Plot the canonical transcript composition of this dataset based on transcripts
-#' associated with the exon composition associated with each gene.
+#' associated with the exon composition associated with each gene. This function
+#' will plot the relative count of canonical transcripts compared to non-canonical transcripts
+#' found for this dataset.
 #'
 #' @param transData a dataframe containing ensembl gene, transcript, and exon IDs.
 #' @param datasetName (optional) name of dataset provided to include in figure.
