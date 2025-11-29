@@ -16,8 +16,8 @@ which can be useful for some downstream tasks.}
 Returns a cleaned dataset.
 }
 \description{
-Given a file, load and clean the dataset so that it contains standardized ensembl
-gene IDs, exon IDs, and transcript IDs.
+Given a file with the specified inputs, load and clean the dataset
+so that it contains standardized ensembl gene IDs, exon IDs, and transcript IDs.
 }
 \examples{
 filepath <- system.file("extdata", "example_data.csv", package = "transComp")

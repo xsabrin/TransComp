@@ -16,7 +16,9 @@ Returns a plot of transcript composition.
 }
 \description{
 Plot the canonical transcript composition of this dataset based on transcripts
-associated with the exon composition associated with each gene.
+associated with the exon composition associated with each gene. This function
+will plot the relative count of canonical transcripts compared to non-canonical transcripts
+found for this dataset.
 }
 \examples{
 canPlot <- plotTransCan(formattedData, "test data")

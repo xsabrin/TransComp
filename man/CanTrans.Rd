@@ -13,7 +13,8 @@ CanTrans(transData)
 Returns a list of genes that only contains exons found on the canonical transcript.
 }
 \description{
-Identify the composition of canonical transcripts of a dataset from its exon composition.
+Identify possible based on exon composition and return transcripts among them which
+are considered the canonical transcript.
 }
 \examples{
 canonical_transcripts <- CanTrans(formattedData)

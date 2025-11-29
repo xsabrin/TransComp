@@ -15,7 +15,8 @@ Returns a dataframe with the possible transcript of each gene read.
 }
 \description{
 Identify the transcript composition of a given dataset, given multiple
-sequencing reads of a gene.
+sequencing reads of a gene. This function takes in different samples of a gene
+and identifies the likely transcripts based on the gene-sample identifiers.
 }
 \examples{
 canonical_transcripts <- TransComp(formattedData)
